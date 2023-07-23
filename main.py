@@ -4,7 +4,8 @@ numero_secreto = 14
 tentativas = 5
 
 while(tentativas):
-    print("Tentativa atual: ", tentativas)
+    print("Tentativa atual: {}".format(tentativas))
+    #interpolação de strings
     chute_str = input("Digite seu numero: ")
 
     print("voce digitou: ", chute_str)
