@@ -3,8 +3,9 @@ print("Bem vindo ao joguinho, tente adivinhar o número")
 numero_secreto = 14
 tentativas = 5
 
-while(tentativas):
-    print("Tentativa atual: {}".format(tentativas))
+
+for rodada in range(1, tentativas + 1):
+    print("Tentativa {} de {}".format(rodada, tentativas))
     #interpolação de strings
     chute_str = input("Digite seu numero: ")
 
@@ -23,4 +24,5 @@ while(tentativas):
             print("Você errou, chute um número menor!")
         elif(menor):
             print("Você errou, chute um número maior!")
-    tentativas = tentativas -1
+
+print("Fim do Jogo!")
