@@ -1,6 +1,9 @@
+import random
+#biblioteca
+
 print("Bem vindo ao joguinho, tente adivinhar o número")
 
-numero_secreto = 14
+numero_secreto = random.randrange(1,101)
 tentativas = 5
 
 
