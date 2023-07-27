@@ -13,7 +13,7 @@ def jogo():
     nivel = int(input("Defina o nível: "))
 
     if (nivel == 1):
-        tentativas = 20adivinhacao.py
+        tentativas = 20
     elif (nivel == 2):
         tentativas = 10
     else:
