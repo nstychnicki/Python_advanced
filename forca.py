@@ -10,13 +10,17 @@ def jogo():
     while(not enforcou and not acertou):
 
         chute = input("Qual letra? ")
+        chute = chute.strip()
+        # entrada do usuario - string types
 
         posicao = 0
         for letra in palavra_secreta:
-            if(chute == letra):
-                print("Encontrei a letra {} na posição {}".format(letra, posicao))
+            if(chute.upper() == letra.upper()):
+                print("Encontrei a letra {} na posição {}".format(letra, posicao + 1))
             posicao = posicao + 1
+
     print("Fim do Jogo!")
 
 if (__name__ == "__main__"):
     jogo()
+
