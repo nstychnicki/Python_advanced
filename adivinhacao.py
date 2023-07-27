@@ -47,3 +47,8 @@ def jogo():
             pontos = pontos - pontos_perdidos
 
     print("Fim do Jogo!")
+
+if (__name__ == "__main__"):
+    jogo()
+    #serve para autorizar a compilação de cada arquivo separado
+    #sem isso so conseguimos rodar os arquivos no "jogos.py"
