@@ -2,7 +2,7 @@ def jogo():
     print("Bem vindo ao joguinho!")
 
     palavra_secreta = "nataly".upper()
-    letras_certas = ["_","_","_","_","_","_"]
+    letras_certas = ["_" for letra in palavra_secreta]
     #[] serve para criar listas
     tentativa = 0
 
@@ -30,6 +30,7 @@ def jogo():
 
         else:
             tentativa += 1
+            print("Restam {} tentativas" .format(6 - tentativa))
 
         enforcou = tentativa == 6
         #quando houver 6 tentativas o enforcou sera True
