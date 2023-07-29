@@ -1,9 +1,10 @@
 def jogo():
     print("Bem vindo ao joguinho!")
 
-    palavra_secreta = "nataly"
+    palavra_secreta = "nataly".upper()
     letras_certas = ["_","_","_","_","_","_"]
     #[] serve para criar listas
+    tentativa = 0
 
     print(letras_certas)
     
@@ -14,18 +15,33 @@ def jogo():
     while(not enforcou and not acertou):
 
         chute = input("Qual letra? ")
-        chute = chute.strip()
+        chute = chute.strip().upper()
         # entrada do usuario - string types
+        #strip - tira os espaços/ upper - deixa tudo em caps
         #não alteram a string original (string sao imutaveis)
 
-        posicao = 0
-        for letra in palavra_secreta:
-            if(chute.upper() == letra.upper()):
-                letras_certas[posicao] = letra
-                #substitui a letra certa dentro da lista
-            posicao = posicao + 1
+        if(chute in palavra_secreta):
+            posicao = 0
+            for letra in palavra_secreta:
+                if(chute == letra):
+                    letras_certas[posicao] = letra
+                    #substitui a letra certa dentro da lista
+                posicao += 1
+
+        else:
+            tentativa += 1
+
+        enforcou = tentativa == 6
+        #quando houver 6 tentativas o enforcou sera True
+        acertou = "_" not in letras_certas
+        #faz com que o programa pare quando não houver mais _
         print(letras_certas)
-    print("Fim do Jogo!")
+
+    if(acertou):
+        print("Você ganhou!")
+    else:
+        print("Você perdeu :(")
+    print("Fim do Jogo.")
 
 if (__name__ == "__main__"):
     jogo()
