@@ -1,7 +1,22 @@
+import random
+
+
 def jogo():
     print("Bem vindo ao joguinho!")
 
-    palavra_secreta = "nataly".upper()
+    arquivo = open("palavras.txt", "r")
+    palavras = []
+
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+
+    arquivo.close()
+
+    numero = random.randrange(0, len(palavras))
+    #randomiza dentro do range do arquivo txt
+    palavra_secreta = palavras[numero].upper()
+
     letras_certas = ["_" for letra in palavra_secreta]
     #[] serve para criar listas
     tentativa = 0
